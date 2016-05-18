@@ -49,8 +49,8 @@ example:
 
 # WRONG
 - name: create foo temp directory
-  file: path=/tmp/foo state=directory # WRONG - too many parameters
-        owner=bar group=fooers        # WRONG - too many parameters
+  file: path=/tmp/foo
+        state=directory owner=bar group=fooers # WRONG: multiple params on line
 ```
 
 #### Pros
