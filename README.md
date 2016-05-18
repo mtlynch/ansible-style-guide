@@ -36,14 +36,21 @@ priority and this style guide should be modified to eliminate the contradiction.
 
 #### Decision
 
-Use line breaks to separate parameters to Ansible modules, for example:
+Use line breaks and indentation to separate parameters to Ansible modules, for
+example:
 
 ```yaml
+# Correct
 - name: create foo temp directory
   file: path=/tmp/foo
         state=directory
         owner=bar
         group=fooers
+
+# WRONG
+- name: create foo temp directory
+  file: path=/tmp/foo state=directory # WRONG - too many parameters
+        owner=bar group=fooers        # WRONG - too many parameters
 ```
 
 #### Pros
